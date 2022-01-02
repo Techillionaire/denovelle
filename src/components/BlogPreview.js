@@ -34,7 +34,7 @@ export default function BlogPreview() {
   };
 
   return (
-    <Card sx={{ maxWidth: 450, maxHeight: 1000, border: 0, borderRadius: 0, marginTop: 2 }}>
+    <Card sx={{ maxWidth: 450, maxHeight: 1000, border: 0, borderRadius: 0, margin: 2 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -51,8 +51,8 @@ export default function BlogPreview() {
       />
       <CardMedia
         component="img"
-        height="50"
-        width="50"
+        height="100"
+        width="100"
         image="/static/images/cards/paella.jpg"
         alt="Paella dish"
       />
