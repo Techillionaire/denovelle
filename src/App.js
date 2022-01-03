@@ -1,4 +1,3 @@
-import './App.css';
 import Nav from "./components/Nav"
 import Home from "./components/Home"
 
@@ -6,7 +5,10 @@ const App = () => {
   return (
       <>
         <Nav />
-        <Home />
+        <main>
+          <Home />
+        </main>
+        
       </>
       
       

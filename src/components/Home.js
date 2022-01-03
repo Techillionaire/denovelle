@@ -1,28 +1,31 @@
 import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import BlogPreview from "./BlogPreview"
-import ShopPreview from "./ShopPreview"
+import BlogPreview from "./BlogPreview";
 
-const Home = () => {
-    return(
-        <Grid container>
-            <Grid item xs={12} md={4} sx={{  flex: 0.25}}>
-                <Paper sx={{ minHeight: 1000, background: "#f9f9f9", borderRadius: 0, border: 0 }}><ShopPreview /></Paper>
-            </Grid>
-            
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
-            <Grid item xs={12} sm={6} md={4} sx={{  flex: 0.50}}>
-                <Paper sx={{ minHeight: 1000, background: "#f9f9f9", borderRadius: 0, border: 0  }}><BlogPreview /></Paper>
-            </Grid>
-           
-
-            <Grid item xs={12} md={4} sx={{  flex: 0.25}}>
-                <Paper>1</Paper>
-            </Grid>
-            
+export default function Home() {
+  return (
+    <Box sx={{ flexGrow: 1, marginTop: "10px" }} >
+      <Grid container spacing={.5} >
+        <Grid item xs={3.5} sx={{ borderRadius: "0"}}>
+          <Item>variable width content</Item>
         </Grid>
-    )
+        <Grid item xs={5} sx={{ borderRadius: "0", minHeight: 'auto'}}>
+          <BlogPreview />
+        </Grid>
+        <Grid item xs={3.5} sx={{ borderRadius: "0"}}>
+          <Item>xs</Item>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 }
-
-export default Home
